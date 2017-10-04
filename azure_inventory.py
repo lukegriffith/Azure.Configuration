@@ -25,23 +25,15 @@ class Azure_Inventory():
     ''' Dynamic inventory class used to query Azure for virtual machines. '''
     def __init__(self):
 
-        args = self.parse_args()
+        args = self.parse_args()        
 
-        ini_path = os.path.dirname(os.path.realpath(__file__)) + "/.azureSubscription"
-        ini_file = open(ini_path, "r")
+        client_id = os.environ['client_id']
+        secret = os.environ['secret']
+        tenant = os.environ['tenant']
+        subscription = os.environ['subscription']
 
-        config = self.getConfiguration(ini_file)
-
-        client_id = config.get("accountDetails", "client_id")
-        secret = config.get("accountDetails", "secret")
-        tenant = config.get("accountDetails", "tenant")
-        subscription = config.get("accountDetails", "subscription")
-
-        boundry = int(config.get("settings", "boundry"))
-
-        print(args.toggleBoundry)
-        print(boundry)
-
+        boundry = 1
+        
         if  args.toggleBoundry:
             if boundry:
                 boundry = 0
@@ -51,8 +43,7 @@ class Azure_Inventory():
                 boundry = 1
                 config.set("settings", "boundry", boundry)
 
-        ini_file = open(ini_path, "w")
-        config.write(ini_file)
+
 
 
         credentials = ServicePrincipalCredentials(client_id=client_id,
