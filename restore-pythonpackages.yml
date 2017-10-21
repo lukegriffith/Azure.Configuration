@@ -5,9 +5,9 @@
   vars:
      pip_packages: "{{ lookup('file', './requirements.txt') }}"
 
-tasks:
- - pip: 
-      name: "{{item}}"
-   
-   with_items: pip_packages
-   become: yes
+  tasks:
+   - pip: 
+        name: "{{item}}"
+     
+     with_items: pip_packages
+     become: yes
