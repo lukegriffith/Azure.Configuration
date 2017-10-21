@@ -8,6 +8,5 @@
   tasks:
    - pip: 
         name: "{{item}}"
-     
-     with_items: pip_packages
      become: yes
+     with_items: ["azure-common", "azure-mgmt-compute", "azure-mgmt-network" ,"configparser"]
