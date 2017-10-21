@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+  gather_facts: no
+  vars:
+     pip_packages: "{{ lookup('file', './requirements.txt') }}"
+
+tasks:
+ - pip: 
+      name: "{{item}}"
+   
+   with_items: pip_packages
+   become: yes

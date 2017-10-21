@@ -1,3 +1,4 @@
 .azureSubscription
 *tfstate*
 .vscode/launch.json
+set_env.ps1

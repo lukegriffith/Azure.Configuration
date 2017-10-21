@@ -34,16 +34,6 @@ class Azure_Inventory():
 
         boundry = 1
         
-        if  args.toggleBoundry:
-            if boundry:
-                boundry = 0
-                config.set("settings", "boundry", boundry)
-
-            elif not boundry:
-                boundry = 1
-                config.set("settings", "boundry", boundry)
-
-
 
 
         credentials = ServicePrincipalCredentials(client_id=client_id,

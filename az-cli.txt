@@ -1,0 +1,2 @@
+// Start ans-poc, awx. 
+az vm start --resource-group ANS-POC --name ans-poc
