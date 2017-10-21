@@ -15,11 +15,11 @@ from azure.mgmt.network import NetworkManagementClient
 
 class Azure_Machine:
     def __init__(self, name, location, tags, public_ip, private_ip):
-        self.name = unicode(name).encode('utf-8')
-        self.location = unicode(location).encode('utf-8')
-        self.tags = unicode(tags).encode('utf-8')
-        self.public_ip = unicode(public_ip).encode('utf-8')
-        self.private_ip = unicode(private_ip).encode('utf-8')
+        self.name = unicode(name).encode('ascii', 'ignore')
+        self.location = unicode(location).encode('ascii', 'ignore')
+        self.tags = unicode(tags).encode('ascii', 'ignore')
+        self.public_ip = unicode(public_ip).encode('ascii', 'ignore')
+        self.private_ip = unicode(private_ip).encode('ascii', 'ignore')
 
 class Azure_Inventory():
     ''' Dynamic inventory class used to query Azure for virtual machines. '''
