@@ -144,6 +144,6 @@ class Azure_Inventory():
                 inv["hosts"].append(i.private_ip)
 
 
-        print(inv)
+        print(json.dumps(inv))
 
 Azure_Inventory()
