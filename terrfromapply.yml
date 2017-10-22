@@ -3,7 +3,7 @@
 
   gather_facts: no
   tasks:
-  - shell: terraform apply
+  - shell: git clone https://github.com/lukemgriffith/Azure.Infrastructure && cd Azure.Infrastructure && terraform apply
     register: log
 
   - debug:
